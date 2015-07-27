@@ -30,3 +30,16 @@ java.lang.Vector;
    // 차후 입력되는 데이터 값이 늘어가다가 11번째가 되면
    // 자동으로 20칸으로 늘어나는 식으로 개발자가 지정하지 않아도
    // 맞춰서 자동으로 확장함
+   
+   
+   
+ 클래스 BIG4
+ 1.ArrayList
+ 2.Vector
+ 3.Stack
+ 4.HashMap
+ 
+ 인터페이스 BIG3
+ 1.Map
+ 2.List
+ 3.Set
