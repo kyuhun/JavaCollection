@@ -20,19 +20,8 @@ public class MemberController {
 		}
 		else {
 			switch (input) {
-			case "join":
-				System.out.println("아이디 :");
-				String userid = scanner.next();
-				System.out.println("비밀번호 :");
-				String password = scanner.next();
-				System.out.println("이름 :");
-				String name = scanner.next();
-				System.out.println("나이 :");
-				int age = scanner.nextInt();
-				System.out.println("주소 :");
-				String address = scanner.next();
-				service.MemberJoin(userid,password,name,age,address);
-				System.out.println("회원가입 성공");
+			case "join": // 메소드 리팩토링 단축키 ALT SHIFT M
+				jyn(service, scanner);
 				break;
 			case "login":
 				System.out.println("아이디 입력:");
@@ -43,17 +32,36 @@ public class MemberController {
 				String flag = result.substring(0, 5);
 				if (flag.equals("환영합니다")) {
 					System.out.println(result);
-			} else if(flag.equals("비번이 틀")){
-				
-			}
-				break;
-				
-			default:
-				System.out.println("다시 입력하세요");
-				break;
-			}
-		}
+					break;
+				} 
+				else if(flag.equals("비번이 틀")){
+				System.out.println(result);
+				continue;
 				}
+				
+				
+				else{
+				System.out.println("다시 입력하세요");
+				continue;
+				}
+				}
+		}
+	}
 	
+	}
+
+	private static void jyn(MemberService service, Scanner scanner) {
+		System.out.println("아이디 :");
+		String userid = scanner.next();
+		System.out.println("비밀번호 :");
+		String password = scanner.next();
+		System.out.println("이름 :");
+		String name = scanner.next();
+		System.out.println("나이 :");
+		int age = scanner.nextInt();
+		System.out.println("주소 :");
+		String address = scanner.next();
+		service.MemberJoin(userid,password,name,age,address);
+		System.out.println("회원가입 성공");
 	}
 }
